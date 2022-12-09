@@ -1,4 +1,4 @@
-# Modified by @LISA_FAN_LK | @UploadLinkToFileBot
+
 
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -72,7 +72,7 @@ async def help_user(bot, update):
         reply_markup=InlineKeyboardMarkup(
         [
           [
-          InlineKeyboardButton('📍 JOIN CHANNEL 📍', url='https://t.me/HxBots'),
+          InlineKeyboardButton('📍 JOIN CHANNEL 📍', url='https://t.me/+uPg3TPNFuckwMDU0'),
           ]
         ]
        ),
@@ -97,7 +97,7 @@ async def about(bot, update):
         reply_markup=InlineKeyboardMarkup(
         [
           [
-          InlineKeyboardButton('📍 JOIN CHANNEL 📍', url='https://t.me/HxBots'),
+          InlineKeyboardButton('📍 JOIN CHANNEL 📍', url='https://t.me/+uPg3TPNFuckwMDU0'),
           ]
         ]
        ),
@@ -114,11 +114,11 @@ async def start(bot, update):
         reply_markup=InlineKeyboardMarkup(
         [
           [
-          InlineKeyboardButton('📍 CHANNEL', url='https://t.me/HxBots'),
+          InlineKeyboardButton('📍 CHANNEL', url='https://t.me/+uPg3TPNFuckwMDU0'),
       ],
       [
-          InlineKeyboardButton('👨‍💻 DEVELOPER', url='https://t.me/kirodewal'),
-          InlineKeyboardButton('🌝 SOURCE', url='https://github.com/oVo-HxBots'),
+          InlineKeyboardButton('👨‍💻 DEVELOPER', url='https://t.me/A7_SYR'),
+          InlineKeyboardButton('🌝 SOURCE', url='https://t.me/+uPg3TPNFuckwMDU0'),
           ]
         ]
       ),
