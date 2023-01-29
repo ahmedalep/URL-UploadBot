@@ -52,7 +52,6 @@ class Bot(Client):
             plugins={"root": "plugins"},
             sleep_threshold=15,
         )
-
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"       
