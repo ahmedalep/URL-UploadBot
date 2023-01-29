@@ -1,5 +1,5 @@
 from pyrogram import Client 
-from config import API_ID, API_HASH, BOT_TOKEN, FORCE_SUB, PORT
+from config import API_ID, API_HASH, BOT_TOKEN, PORT
 from aiohttp import web
 from route import web_server
 
@@ -53,20 +53,6 @@ class Bot(Client):
             sleep_threshold=15,
         )
 
-    async def start(self):
-        await super().start()
-        me = await self.get_me()
-        self.mention = me.mention
-        self.username = me.username 
-        self.force_channel = FORCE_SUB
-        if FORCE_SUB:
-            try:
-                link = await self.export_chat_invite_link(FORCE_SUB)                  
-                self.invitelink = link
-            except Exception as e:
-                print(e)
-                print("Make Sure Bot admin in force sub channel")             
-                self.force_channel = None
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"       
