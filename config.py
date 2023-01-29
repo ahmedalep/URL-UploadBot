@@ -1,33 +1,14 @@
-import os
+import re, os
 
-class Config(object):
-    
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-    
-    API_ID = int(os.environ.get("API_ID", 12345))
-    
-    API_HASH = os.environ.get("API_HASH")
-    
-    DOWNLOAD_LOCATION = "./DOWNLOADS"
-    
-    MAX_FILE_SIZE = 50000000
+id_pattern = re.compile(r'^.\d+$') 
 
-    TG_MAX_FILE_SIZE = 2097152000
+API_ID = os.environ.get("APP_ID", "")
 
-    FREE_USER_MAX_FILE_SIZE = 50000000
-    
-    CHUNK_SIZE = int(128)
+API_HASH = os.environ.get("API_HASH", "")
 
-    HTTP_PROXY = ""
-    
-    MAX_MESSAGE_LENGTH = 4096
-    
-    PROCESS_MAX_TIMEOUT = 3600
-    
-    OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "") 
+ 
 
-    SESSION_NAME = "UploadLinkToFileBot"
-    
-    DATABASE_URL = os.environ.get("DATABASE_URL", "")
+ADMIN = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('AUTH_USERS', '').split()]
 
-    MAX_RESULTS = "50"
+PORT = os.environ.get('PORT', '8080')
