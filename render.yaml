@@ -1,11 +1,11 @@
 services:
-  # A background worker that consumes a queue
-  - type: worker
-    name: UrlUploadBotV3
+  - type: web
+    plan: free
+    name: X-URL-Uploader
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
-    repo: https://github.com/oVo-HxBots/URL-UploadBot.git
+    repo: https://github.com/ahmedalep/URL-UploadBot.git      
     branch: main
     envVars:
       - key: BOT_TOKEN 
@@ -14,12 +14,14 @@ services:
         sync: false
       - key: API_HASH 
         sync: false
-      - key: SESSION_NAME 
-        value: urluploadbot
-      - key: DOWNLOAD_LOCATION 
-        value: ./DOWNLOADS
-      - key: OWNER_ID 
-        sync: false 
-      - key: DATABASE_URL 
+      - key: FORCE_SUB 
         sync: false
-    autoDeploy: false # optional
+      - key: DB_NAME 
+        sync: false
+      - key: DB_URL 
+        sync: false 
+      - key: START_PIC 
+        sync: false
+      - key: ADMIN 
+        sync: false    
+    autoDeploy: false 
