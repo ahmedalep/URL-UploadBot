@@ -1,3 +1,8 @@
+from pyrogram import Client 
+from config import API_ID, API_HASH, BOT_TOKEN, FORCE_SUB, PORT
+from aiohttp import web
+from route import web_server
+
 # the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -25,19 +30,15 @@ if __name__ == "__main__" :
     )
     app = pyrogram.Client(
         "X-URL-Uploader",
-        bot_token=Config.BOT_TOKEN,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        plugins=plugins
+        bot_token=BOT_TOKEN,
+        api_id=API_ID,
+        api_hash=API_HASH,
+        plugins={"root": "plugins"}
     )
     Config.AUTH_USERS.add(958850850)
     app.run()
 
 
-from pyrogram import Client 
-from config import API_ID, API_HASH, BOT_TOKEN, FORCE_SUB, PORT
-from aiohttp import web
-from route import web_server
 
 class Bot(Client):
 
